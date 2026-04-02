@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recoverpy"
+version = "0.1.0"
+description = "Python migration of RECOVER NBR scripts using DuckDB"
+authors = [
+    { name = "Hyungrok Do" }
+]
+dependencies = [
+    "duckdb>=1.0.0",
+    "pandas>=2.2.2",
+    "pyarrow>=16.1.0",
+    "numpy>=1.26.0",
+    "tqdm>=4.66.0",
+    "numexpr>=2.10.2",
+    "bottleneck>=1.4.2"
+]
+requires-python = ">=3.10"
+
+[project.scripts]
+recover-adult = "recoverpy.cli:run_adult"
+recover-pediatric = "recoverpy.cli:run_pediatric"
+recover-congenital = "recoverpy.cli:run_congenital"
+recover-pregnancy = "recoverpy.cli:run_pregnancy"
